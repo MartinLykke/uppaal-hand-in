@@ -22,7 +22,7 @@ chan OpenClutch, CloseClutch, ClutchIsOpen, ClutchIsClosed;
 		</location>
 		<location id="id1" x="-289" y="8">
 			<name x="-348" y="-25">Opening</name>
-			<label kind="invariant" x="-299" y="25">CTimer&lt;=150</label>
+			<label kind="invariant" x="-399" y="0">CTimer&lt;=150</label>
 		</location>
 		<location id="id2" x="25" y="8">
 			<name x="15" y="-26">Open</name>
@@ -41,8 +41,8 @@ chan OpenClutch, CloseClutch, ClutchIsOpen, ClutchIsClosed;
 		<transition>
 			<source ref="id1"/>
 			<target ref="id5"/>
-			<label kind="guard" x="-195" y="8">CTimer==150</label>
-			<label kind="assignment" x="-221" y="34">ErrStat := 2</label>
+			<label kind="guard" x="-272" y="25">CTimer==150</label>
+			<label kind="assignment" x="-272" y="42">ErrStat := 2</label>
 		</transition>
 		<transition>
 			<source ref="id3"/>
@@ -460,7 +460,7 @@ UseCase:=0</label>
 		</transition>
 	</template>
 	<template>
-		<name x="5" y="5">GearController</name>
+		<name x="5" y="5">GearControl</name>
 		<declaration>// Place local declarations here.
 clock GCTimer;</declaration>
 		<location id="id40" x="-93" y="-748" color="#ff00ff">
@@ -505,7 +505,7 @@ clock GCTimer;</declaration>
 		</location>
 		<location id="id51" x="246" y="-136">
 			<name x="178" y="-127">CheckClutch</name>
-			<label kind="invariant" x="178" y="-110">(GCTimer&lt;=200)</label>
+			<label kind="invariant" x="178" y="-110">GCTimer&lt;=200</label>
 		</location>
 		<location id="id52" x="620" y="-212">
 			<name x="493" y="-221">ReqSetGear2</name>
@@ -521,14 +521,14 @@ clock GCTimer;</declaration>
 		</location>
 		<location id="id55" x="416" y="51">
 			<name x="425" y="59">CheckGearSet2</name>
-			<label kind="invariant" x="425" y="76">(GCTimer&lt;=350)</label>
+			<label kind="invariant" x="425" y="76">GCTimer&lt;=350</label>
 		</location>
 		<location id="id56" x="246" y="51">
 			<name x="212" y="68">GSetError</name>
 		</location>
 		<location id="id57" x="-85" y="51">
 			<name x="-68" y="59">CheckGearSet1</name>
-			<label kind="invariant" x="-68" y="76">(GCTimer&lt;=350)</label>
+			<label kind="invariant" x="-68" y="76">GCTimer&lt;=350</label>
 		</location>
 		<location id="id58" x="416" y="195">
 			<name x="425" y="169">ClutchClose</name>
@@ -536,7 +536,7 @@ clock GCTimer;</declaration>
 		</location>
 		<location id="id59" x="238" y="195">
 			<name x="187" y="136">CheckClutchClosed</name>
-			<label kind="invariant" x="187" y="153">(GCTimer&lt;=200)</label>
+			<label kind="invariant" x="187" y="153">GCTimer&lt;=200</label>
 		</location>
 		<location id="id60" x="-85" y="195">
 			<name x="-68" y="204">ReqTorqueC</name>
@@ -551,7 +551,7 @@ clock GCTimer;</declaration>
 		</location>
 		<location id="id63" x="391" y="314">
 			<name x="323" y="331">CheckClutchClosed2</name>
-			<label kind="invariant" x="323" y="348">(GCTimer&lt;200)</label>
+			<label kind="invariant" x="323" y="348">GCTimer&lt;200</label>
 		</location>
 		<location id="id64" x="-85" y="-42">
 			<name x="-68" y="-59">ReqSetGear</name>
@@ -562,24 +562,24 @@ clock GCTimer;</declaration>
 			<source ref="id64"/>
 			<target ref="id57"/>
 			<label kind="synchronisation" x="-85" y="-13">ReqSet!</label>
-			<label kind="assignment" x="-76" y="-8">GCTimer:=0</label>
+			<label kind="assignment" x="-59" y="8">GCTimer:=0</label>
 		</transition>
 		<transition>
 			<source ref="id53"/>
 			<target ref="id64"/>
-			<label kind="guard" x="-34" y="-85">GCTImer&lt;150</label>
+			<label kind="guard" x="-34" y="-85">GCTimer&lt;150</label>
 			<label kind="synchronisation" x="-85" y="-101">SpeedSet?</label>
 		</transition>
 		<transition>
 			<source ref="id49"/>
 			<target ref="id48"/>
-			<label kind="assignment" x="416" y="-348">GCTimer&gt;200,
+			<label kind="guard" x="333" y="-386">GCTimer&gt;200 &amp;&amp;
 GCTimer&lt;=250</label>
 		</transition>
 		<transition>
 			<source ref="id41"/>
 			<target ref="id50"/>
-			<label kind="assignment" x="-212" y="-561">FromGear&lt;=0</label>
+			<label kind="guard" x="-161" y="-612">FromGear&lt;=0</label>
 			<nail x="-135" y="-646"/>
 			<nail x="-153" y="-612"/>
 			<nail x="-170" y="-544"/>
@@ -603,7 +603,7 @@ GCTimer&lt;=250</label>
 		<transition>
 			<source ref="id50"/>
 			<target ref="id61"/>
-			<label kind="assignment" x="-204" y="-17">ToGear&lt;=0</label>
+			<label kind="guard" x="-161" y="-216">ToGear&lt;=0</label>
 			<nail x="-127" y="-238"/>
 			<nail x="-153" y="-204"/>
 			<nail x="-170" y="-161"/>
@@ -630,7 +630,7 @@ GCTimer&lt;=250</label>
 		<transition>
 			<source ref="id63"/>
 			<target ref="id62"/>
-			<label kind="assignment" x="272" y="280">GCTimer&gt;150,
+			<label kind="guard" x="386" y="259">GCTimer&gt;150 &amp;&amp;
 GCTimer&lt;=200</label>
 			<nail x="382" y="272"/>
 			<nail x="340" y="255"/>
@@ -638,7 +638,7 @@ GCTimer&lt;=200</label>
 		<transition>
 			<source ref="id59"/>
 			<target ref="id62"/>
-			<label kind="assignment" x="119" y="212">GCTimer&gt;150,
+			<label kind="guard" x="275" y="224">GCTimer&gt;150 &amp;&amp;
 GCTimer&lt;=200</label>
 			<nail x="238" y="221"/>
 			<nail x="246" y="229"/>
@@ -715,7 +715,7 @@ GCTimer&lt;=350</label>
 			<target ref="id53"/>
 			<label kind="guard" x="-89" y="-225">ToGear&gt;0</label>
 			<label kind="synchronisation" x="-89" y="-208">ReqSpeed!</label>
-			<label kind="assignment" x="-76" y="-204">GCTimer:=0</label>
+			<label kind="assignment" x="-51" y="-195">GCTimer:=0</label>
 		</transition>
 		<transition>
 			<source ref="id49"/>
@@ -731,13 +731,13 @@ GCTimer&lt;=350</label>
 		<transition>
 			<source ref="id51"/>
 			<target ref="id45"/>
-			<label kind="assignment" x="250" y="-301">GCTimer&gt;150,
+			<label kind="guard" x="250" y="-335">GCTimer&gt;150 &amp;&amp;
 GCTimer&lt;=200</label>
 		</transition>
 		<transition>
 			<source ref="id43"/>
 			<target ref="id45"/>
-			<label kind="assignment" x="272" y="-518">GCTimer&gt;150,
+			<label kind="guard" x="272" y="-527">GCTimer&gt;150 &amp;&amp;
 GCTimer&lt;=200</label>
 		</transition>
 		<transition>
@@ -766,8 +766,8 @@ GCTimer&lt;=250</label>
 		<transition>
 			<source ref="id42"/>
 			<target ref="id46"/>
+			<label kind="guard" x="-93" y="-548">GCTimer&lt;250</label>
 			<label kind="synchronisation" x="-93" y="-531">TorqueZero?</label>
-			<label kind="assignment" x="-76" y="-501">GCTimer&lt;250</label>
 		</transition>
 		<transition>
 			<source ref="id42"/>
@@ -791,7 +791,7 @@ GCTimer&lt;=250</label>
 		</transition>
 	</template>
 	<system>// List one or more processes to be composed into a system.
-system Interface, GearController, GearBox, Clutch, Engine;
+system Interface, GearControl, GearBox, Clutch, Engine;
     </system>
 	<queries>
 		<query>
