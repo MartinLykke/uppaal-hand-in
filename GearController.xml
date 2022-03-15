@@ -460,314 +460,315 @@ UseCase:=0</label>
 		</transition>
 	</template>
 	<template>
-		<name x="5" y="5">GearControl</name>
-		<declaration>// Place local declarations here.
-clock GCTimer;</declaration>
-		<location id="id40" x="-93" y="-748" color="#ff00ff">
-			<name x="-110" y="-782">Gear</name>
+		<name>GearControl</name>
+		<declaration>clock GCTimer;</declaration>
+		<location id="id40" x="-374" y="-425">
+			<name x="-391" y="-459">Gear</name>
 		</location>
-		<location id="id41" x="-93" y="-663">
-			<name x="-76" y="-680">Initiate</name>
+		<location id="id41" x="-374" y="-102">
+			<name x="-476" y="-119">ReqNeuGear</name>
 			<committed/>
 		</location>
-		<location id="id42" x="-93" y="-569">
-			<name x="-204" y="-578">CheckTorque</name>
-			<label kind="invariant" x="-212" y="-561">GCTimer &lt;= 255</label>
-		</location>
-		<location id="id43" x="246" y="-569">
-			<name x="263" y="-569">CheckClutch2</name>
-			<label kind="invariant" x="263" y="-552">GCTimer&lt;=200</label>
-		</location>
-		<location id="id44" x="620" y="-467">
-			<name x="637" y="-492">CluchOpen2</name>
+		<location id="id42" x="-374" y="42">
+			<name x="-357" y="34">ReqSyncSpeed</name>
 			<committed/>
 		</location>
-		<location id="id45" x="246" y="-467">
-			<name x="271" y="-476">COpenError</name>
-		</location>
-		<location id="id46" x="-93" y="-459">
-			<name x="-195" y="-467">ReqNeuGear</name>
+		<location id="id43" x="-374" y="272">
+			<name x="-484" y="263">ReqSetGear</name>
 			<committed/>
 		</location>
-		<location id="id47" x="-93" y="-357">
-			<name x="-212" y="-374">CheckGearNeu</name>
-			<label kind="invariant" x="-212" y="-357">GCTimer&lt;=250</label>
+		<location id="id44" x="-374" y="400">
+			<name x="-493" y="391">CheckGearSet1</name>
+			<label kind="invariant" x="-484" y="408">GCTimer&lt;=350</label>
 		</location>
-		<location id="id48" x="315" y="-356">
-			<name x="280" y="-391">GNeuError</name>
-		</location>
-		<location id="id49" x="620" y="-357">
-			<name x="636" y="-391">CheckGearNeu2</name>
-			<label kind="invariant" x="636" y="-374">GCTimer&lt;=250</label>
-		</location>
-		<location id="id50" x="-93" y="-255">
-			<name x="-204" y="-280">ReqSyncSpeed</name>
+		<location id="id45" x="-374" y="645">
+			<name x="-425" y="654">GearChanged</name>
 			<committed/>
 		</location>
-		<location id="id51" x="246" y="-136">
-			<name x="178" y="-127">CheckClutch</name>
-			<label kind="invariant" x="178" y="-110">GCTimer&lt;=200</label>
-		</location>
-		<location id="id52" x="620" y="-212">
-			<name x="493" y="-221">ReqSetGear2</name>
+		<location id="id46" x="-374" y="-348">
+			<name x="-357" y="-357">Initiate</name>
 			<committed/>
 		</location>
-		<location id="id53" x="-93" y="-136">
-			<name x="-221" y="-144">CheckSyncSpeed</name>
-			<label kind="invariant" x="-204" y="-127">GCTimer&lt;=155</label>
+		<location id="id47" x="-374" y="-221">
+			<name x="-484" y="-229">CheckTorque</name>
+			<label kind="invariant" x="-476" y="-212">GCTimer&lt;=255</label>
 		</location>
-		<location id="id54" x="416" y="-51">
-			<name x="433" y="-59">ClutchOpen</name>
+		<location id="id48" x="-374" y="-26">
+			<name x="-493" y="-35">CheckGearNeu</name>
+			<label kind="invariant" x="-484" y="-17">GCTimer&lt;=250</label>
+		</location>
+		<location id="id49" x="-374" y="187">
+			<name x="-501" y="178">CheckSyncSpeed</name>
+			<label kind="invariant" x="-493" y="195">GCTimer&lt;=155</label>
+		</location>
+		<location id="id50" x="-374" y="484">
+			<name x="-493" y="476">ReqTorqueC</name>
 			<committed/>
 		</location>
-		<location id="id55" x="416" y="51">
-			<name x="425" y="59">CheckGearSet2</name>
-			<label kind="invariant" x="425" y="76">GCTimer&lt;=350</label>
+		<location id="id51" x="34" y="-221">
+			<name x="-26" y="-272">CheckClutch2</name>
+			<label kind="invariant" x="-17" y="-255">GCTimer&lt;=200</label>
 		</location>
-		<location id="id56" x="246" y="51">
-			<name x="212" y="68">GSetError</name>
+		<location id="id52" x="34" y="-102">
+			<name x="-61" y="-111">COpenError</name>
 		</location>
-		<location id="id57" x="-93" y="51">
-			<name x="-212" y="42">CheckGearSet1</name>
-			<label kind="invariant" x="-212" y="59">GCTimer&lt;=350</label>
-		</location>
-		<location id="id58" x="416" y="195">
-			<name x="425" y="169">ClutchClose</name>
+		<location id="id53" x="246" y="-136">
+			<name x="264" y="-143">ClutchOpen2</name>
 			<committed/>
 		</location>
-		<location id="id59" x="238" y="195">
-			<name x="187" y="136">CheckClutchClosed</name>
-			<label kind="invariant" x="187" y="153">GCTimer&lt;=200</label>
+		<location id="id54" x="85" y="-26">
+			<name x="51" y="-59">GNeuError</name>
 		</location>
-		<location id="id60" x="-93" y="195">
-			<name x="-195" y="187">ReqTorqueC</name>
+		<location id="id55" x="246" y="-26">
+			<name x="263" y="-34">CheckGearNeu2</name>
+			<label kind="invariant" x="263" y="-17">GCTimer&lt;=250</label>
+		</location>
+		<location id="id56" x="34" y="187">
+			<name x="-8" y="195">CheckClutch</name>
+			<label kind="invariant" x="8" y="212">GCTimer&lt;=200</label>
+		</location>
+		<location id="id57" x="246" y="399">
+			<name x="263" y="399">CheckGearSet2</name>
+			<label kind="invariant" x="263" y="416">GCTimer &lt;= 350</label>
+		</location>
+		<location id="id58" x="-221" y="484">
+			<name x="-212" y="484">CheckClutchClosed</name>
+			<label kind="invariant" x="-204" y="501">GCTimer&lt;=200</label>
+		</location>
+		<location id="id59" x="246" y="484">
+			<name x="204" y="493">ClutchClose</name>
 			<committed/>
 		</location>
-		<location id="id61" x="-93" y="314">
-			<name x="-136" y="340">GearChanged</name>
+		<location id="id60" x="25" y="577">
+			<name x="-17" y="586">CCloseError</name>
+		</location>
+		<location id="id61" x="-102" y="399">
+			<name x="-136" y="408">GSetError</name>
+		</location>
+		<location id="id62" x="178" y="187">
+			<name x="144" y="153">ClutchOpen</name>
 			<committed/>
 		</location>
-		<location id="id62" x="442" y="255">
-			<name x="432" y="221">CCloseError</name>
-		</location>
-		<location id="id63" x="544" y="314">
-			<name x="476" y="331">CheckClutchClosed2</name>
-			<label kind="invariant" x="476" y="348">GCTimer&lt;=200</label>
-		</location>
-		<location id="id64" x="-93" y="-42">
-			<name x="-187" y="-51">ReqSetGear</name>
+		<location id="id63" x="246" y="127">
+			<name x="280" y="102">ReqSetGear2</name>
 			<committed/>
+		</location>
+		<location id="id64" x="118" y="645">
+			<name x="42" y="654">CheckClutchClosed2</name>
+			<label kind="invariant" x="51" y="671">GCTimer&lt;=200</label>
 		</location>
 		<init ref="id40"/>
 		<transition>
 			<source ref="id64"/>
+			<target ref="id60"/>
+			<label kind="guard" x="93" y="535">GCTimer&gt;150 &amp;&amp;
+GCTimer&lt;=200</label>
+			<nail x="118" y="577"/>
+		</transition>
+		<transition>
+			<source ref="id63"/>
 			<target ref="id57"/>
-			<label kind="synchronisation" x="-85" y="-13">ReqSet!</label>
-			<label kind="assignment" x="-59" y="8">GCTimer:=0</label>
+			<label kind="guard" x="272" y="289">ToGear&gt;0</label>
+			<label kind="synchronisation" x="289" y="255">ReqSet!</label>
+			<label kind="assignment" x="263" y="272">GCTimer:=0</label>
+			<nail x="348" y="127"/>
+			<nail x="348" y="399"/>
 		</transition>
 		<transition>
-			<source ref="id53"/>
+			<source ref="id63"/>
 			<target ref="id64"/>
-			<label kind="guard" x="-76" y="-76">GCTimer&gt;150</label>
-			<label kind="synchronisation" x="-85" y="-101">SpeedSet?</label>
+			<label kind="guard" x="314" y="603">ToGear==0</label>
+			<label kind="synchronisation" x="314" y="620">CloseClutch!</label>
+			<label kind="assignment" x="314" y="586">GCTimer:=0</label>
+			<nail x="399" y="127"/>
+			<nail x="399" y="645"/>
 		</transition>
 		<transition>
-			<source ref="id49"/>
-			<target ref="id48"/>
-			<label kind="guard" x="416" y="-399">GCTimer&gt;200 &amp;&amp;
-GCTimer&lt;=250</label>
-		</transition>
-		<transition>
-			<source ref="id41"/>
-			<target ref="id50"/>
-			<label kind="guard" x="-323" y="-501">FromGear&lt;=0</label>
-			<nail x="-229" y="-663"/>
-			<nail x="-229" y="-255"/>
-		</transition>
-		<transition>
-			<source ref="id61"/>
-			<target ref="id40"/>
-			<label kind="synchronisation" x="-391" y="-161">NewGear!</label>
-			<nail x="-323" y="314"/>
-			<nail x="-323" y="-748"/>
-		</transition>
-		<transition>
-			<source ref="id50"/>
-			<target ref="id61"/>
-			<label kind="guard" x="-314" y="-34">ToGear&lt;=0</label>
-			<nail x="-238" y="-161"/>
-			<nail x="-238" y="229"/>
-		</transition>
-		<transition>
-			<source ref="id63"/>
-			<target ref="id61"/>
-			<label kind="synchronisation" x="68" y="323">ClutchIsClosed?</label>
-		</transition>
-		<transition>
-			<source ref="id52"/>
-			<target ref="id63"/>
-			<label kind="guard" x="646" y="85">ToGear==0</label>
-			<label kind="synchronisation" x="646" y="110">CloseClutch!</label>
-			<label kind="assignment" x="646" y="136">GCTimer:=0</label>
-			<nail x="739" y="-212"/>
-			<nail x="739" y="314"/>
-		</transition>
-		<transition>
-			<source ref="id63"/>
-			<target ref="id62"/>
-			<label kind="guard" x="548" y="242">GCTimer&gt;150 &amp;&amp;
-GCTimer&lt;=200</label>
-			<nail x="544" y="255"/>
-		</transition>
-		<transition>
-			<source ref="id59"/>
-			<target ref="id62"/>
-			<label kind="guard" x="119" y="238">GCTimer&gt;150 &amp;&amp;
-GCTimer&lt;=200</label>
-			<nail x="238" y="255"/>
-		</transition>
-		<transition>
-			<source ref="id60"/>
-			<target ref="id61"/>
+			<source ref="id64"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="-195" y="645">ClutchIsClosed?</label>
 		</transition>
 		<transition>
 			<source ref="id55"/>
-			<target ref="id56"/>
-			<label kind="guard" x="272" y="8">GCTimer&gt;300 &amp;&amp;
-GCTimer&lt;=350</label>
+			<target ref="id63"/>
+			<label kind="synchronisation" x="246" y="17">GearNeu?</label>
+		</transition>
+		<transition>
+			<source ref="id62"/>
+			<target ref="id57"/>
+			<label kind="synchronisation" x="178" y="289">ReqSet!</label>
+			<label kind="assignment" x="153" y="272">GCTimer:=0</label>
+			<nail x="246" y="187"/>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id62"/>
+			<label kind="synchronisation" x="52" y="170">ClutchIsOpen?</label>
 		</transition>
 		<transition>
 			<source ref="id57"/>
-			<target ref="id56"/>
-			<label kind="guard" x="59" y="8">GCTimer&gt;300 &amp;&amp;
+			<target ref="id61"/>
+			<label kind="guard" x="17" y="357">GCTimer&gt;300 &amp;&amp;
 GCTimer&lt;=350</label>
-		</transition>
-		<transition>
-			<source ref="id57"/>
-			<target ref="id60"/>
-			<label kind="synchronisation" x="-85" y="106">GearSet?</label>
-		</transition>
-		<transition>
-			<source ref="id59"/>
-			<target ref="id60"/>
-			<label kind="synchronisation" x="-67" y="178">ClutchIsClosed?</label>
 		</transition>
 		<transition>
 			<source ref="id58"/>
-			<target ref="id59"/>
-			<label kind="synchronisation" x="256" y="178">CloseClutch!</label>
-			<label kind="assignment" x="256" y="195">GCTimer:=0</label>
+			<target ref="id60"/>
+			<label kind="guard" x="-161" y="577">GCTimer&gt;150 &amp;&amp;
+GCTimer&lt;=200</label>
+			<nail x="-221" y="577"/>
 		</transition>
 		<transition>
-			<source ref="id55"/>
-			<target ref="id58"/>
-			<label kind="synchronisation" x="416" y="106">GearSet?</label>
-		</transition>
-		<transition>
-			<source ref="id52"/>
-			<target ref="id55"/>
-			<label kind="guard" x="629" y="-17">ToGear&gt;0</label>
-			<label kind="synchronisation" x="629" y="8">ReqSet!</label>
-			<label kind="assignment" x="629" y="-42">GCTimer:=0</label>
-			<nail x="620" y="51"/>
-		</transition>
-		<transition>
-			<source ref="id54"/>
-			<target ref="id55"/>
-			<label kind="synchronisation" x="433" y="-17">ReqSet!</label>
-			<label kind="assignment" x="425" y="8">GCTimer:=0</label>
-		</transition>
-		<transition>
-			<source ref="id51"/>
-			<target ref="id54"/>
-			<label kind="synchronisation" x="264" y="-153">ClutchIsOpen?</label>
-			<nail x="416" y="-136"/>
-		</transition>
-		<transition>
-			<source ref="id53"/>
-			<target ref="id51"/>
-			<label kind="guard" x="68" y="-153">GCTimer&gt;=150</label>
-			<label kind="synchronisation" x="59" y="-136">OpenClutch!</label>
-			<label kind="assignment" x="85" y="-170">GCTimer:=0</label>
-		</transition>
-		<transition>
-			<source ref="id50"/>
-			<target ref="id53"/>
-			<label kind="guard" x="-76" y="-229">ToGear&gt;0</label>
-			<label kind="synchronisation" x="-76" y="-212">ReqSpeed!</label>
-			<label kind="assignment" x="-72" y="-199">GCTimer:=0</label>
-		</transition>
-		<transition>
-			<source ref="id49"/>
-			<target ref="id52"/>
-			<label kind="synchronisation" x="620" y="-297">GearNeu?</label>
+			<source ref="id58"/>
+			<target ref="id50"/>
+			<label kind="synchronisation" x="-348" y="484">ClutchIsClosed?</label>
 		</transition>
 		<transition>
 			<source ref="id44"/>
-			<target ref="id49"/>
-			<label kind="synchronisation" x="620" y="-442">ReqNeu!</label>
-			<label kind="assignment" x="620" y="-425">GCTimer:=0</label>
+			<target ref="id61"/>
+			<label kind="guard" x="-255" y="357">GCTimer&gt;300 &amp;&amp;
+GCTimer&lt;=350</label>
+		</transition>
+		<transition>
+			<source ref="id56"/>
+			<target ref="id52"/>
+			<label kind="guard" x="42" y="85">GCTimer&gt;150 &amp;&amp;
+GCTimer&lt;=200</label>
+		</transition>
+		<transition>
+			<source ref="id49"/>
+			<target ref="id56"/>
+			<label kind="guard" x="-187" y="127">GCTimer&gt;=150</label>
+			<label kind="synchronisation" x="-187" y="161">OpenClutch!</label>
+			<label kind="assignment" x="-187" y="144">GCTimer:=0</label>
+		</transition>
+		<transition>
+			<source ref="id57"/>
+			<target ref="id59"/>
+			<label kind="synchronisation" x="178" y="433">GearSet?</label>
+		</transition>
+		<transition>
+			<source ref="id59"/>
+			<target ref="id58"/>
+			<label kind="synchronisation" x="17" y="459">CloseClutch!</label>
+			<label kind="assignment" x="17" y="442">GCTimer:=0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id54"/>
+			<label kind="guard" x="-195" y="-25">GCTimer&gt;200 &amp;&amp;
+GCTimer&lt;=250</label>
+		</transition>
+		<transition>
+			<source ref="id55"/>
+			<target ref="id54"/>
+			<label kind="guard" x="118" y="-26">GCTimer&gt;200 &amp;&amp;
+GCTimer&lt;=250</label>
+		</transition>
+		<transition>
+			<source ref="id53"/>
+			<target ref="id55"/>
+			<label kind="synchronisation" x="254" y="-85">ReqNeu!</label>
+			<label kind="assignment" x="254" y="-68">GCTimer:=0</label>
 		</transition>
 		<transition>
 			<source ref="id51"/>
-			<target ref="id45"/>
-			<label kind="guard" x="263" y="-263">GCTimer&gt;150 &amp;&amp;
+			<target ref="id52"/>
+			<label kind="guard" x="42" y="-178">GCTimer&gt;150 &amp;&amp;
 GCTimer&lt;=200</label>
 		</transition>
 		<transition>
-			<source ref="id43"/>
+			<source ref="id51"/>
+			<target ref="id53"/>
+			<label kind="synchronisation" x="153" y="-246">ClutchIsOpen?</label>
+			<nail x="246" y="-221"/>
+		</transition>
+		<transition>
+			<source ref="id47"/>
+			<target ref="id51"/>
+			<label kind="guard" x="-195" y="-263">GCTimer&gt;=250</label>
+			<label kind="synchronisation" x="-195" y="-246">OpenClutch!</label>
+			<label kind="assignment" x="-195" y="-280">GCTimer:=0</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
 			<target ref="id45"/>
-			<label kind="guard" x="272" y="-527">GCTimer&gt;150 &amp;&amp;
-GCTimer&lt;=200</label>
+			<label kind="guard" x="-493" y="51">ToGear&lt;=0</label>
+			<nail x="-501" y="42"/>
+			<nail x="-501" y="645"/>
+		</transition>
+		<transition>
+			<source ref="id46"/>
+			<target ref="id42"/>
+			<label kind="guard" x="-484" y="-374">FromGear&lt;=0</label>
+			<nail x="-501" y="-348"/>
+			<nail x="-501" y="42"/>
+		</transition>
+		<transition>
+			<source ref="id45"/>
+			<target ref="id40"/>
+			<label kind="synchronisation" x="-476" y="-450">NewGear!</label>
+			<nail x="-535" y="645"/>
+			<nail x="-535" y="-425"/>
+		</transition>
+		<transition>
+			<source ref="id50"/>
+			<target ref="id45"/>
+			<label kind="synchronisation" x="-459" y="569">ReqTorque!</label>
+		</transition>
+		<transition>
+			<source ref="id44"/>
+			<target ref="id50"/>
+			<label kind="synchronisation" x="-374" y="433">GearSet?</label>
 		</transition>
 		<transition>
 			<source ref="id43"/>
 			<target ref="id44"/>
-			<label kind="synchronisation" x="518" y="-595">ClutchIsOpen?</label>
-			<nail x="620" y="-569"/>
+			<label kind="synchronisation" x="-365" y="331">ReqSet!</label>
+			<label kind="assignment" x="-365" y="314">GCTimer:=0</label>
 		</transition>
 		<transition>
-			<source ref="id47"/>
+			<source ref="id49"/>
+			<target ref="id43"/>
+			<label kind="guard" x="-365" y="238">GCTimer&lt;150</label>
+			<label kind="synchronisation" x="-365" y="221">SpeedSet?</label>
+		</transition>
+		<transition>
+			<source ref="id42"/>
+			<target ref="id49"/>
+			<label kind="guard" x="-365" y="144">ToGear&gt;0</label>
+			<label kind="synchronisation" x="-365" y="161">ReqSpeed!</label>
+			<label kind="assignment" x="-365" y="127">GCTimer:=0</label>
+		</transition>
+		<transition>
+			<source ref="id48"/>
+			<target ref="id42"/>
+			<label kind="synchronisation" x="-365" y="-9">GearNeu?</label>
+		</transition>
+		<transition>
+			<source ref="id41"/>
 			<target ref="id48"/>
-			<label kind="guard" x="59" y="-348">GCTimer&gt;200 &amp;&amp;
-GCTimer&lt;=250</label>
+			<label kind="synchronisation" x="-365" y="-76">ReqNeu!</label>
+			<label kind="assignment" x="-365" y="-93">GCTimer:=0</label>
 		</transition>
 		<transition>
 			<source ref="id47"/>
-			<target ref="id50"/>
-			<label kind="synchronisation" x="-93" y="-323">GearNeu?</label>
+			<target ref="id41"/>
+			<label kind="guard" x="-365" y="-178">GCTimer&lt;250</label>
+			<label kind="synchronisation" x="-365" y="-161">TorqueZero?</label>
 		</transition>
 		<transition>
 			<source ref="id46"/>
 			<target ref="id47"/>
-			<label kind="synchronisation" x="-93" y="-425">ReqNeu!</label>
-			<label kind="assignment" x="-93" y="-408">GCTimer:=0</label>
-		</transition>
-		<transition>
-			<source ref="id42"/>
-			<target ref="id46"/>
-			<label kind="guard" x="-85" y="-510">GCTimer&lt;250</label>
-			<label kind="synchronisation" x="-93" y="-531">TorqueZero?</label>
-		</transition>
-		<transition>
-			<source ref="id42"/>
-			<target ref="id43"/>
-			<label kind="guard" x="76" y="-620">GCTimer&gt;=250</label>
-			<label kind="synchronisation" x="76" y="-603">OpenClutch!</label>
-			<label kind="assignment" x="76" y="-637">GCTimer:=0</label>
-		</transition>
-		<transition>
-			<source ref="id41"/>
-			<target ref="id42"/>
-			<label kind="guard" x="-68" y="-650">FromGear&gt;0</label>
-			<label kind="synchronisation" x="-85" y="-637">ReqZeroTorque!</label>
-			<label kind="assignment" x="-68" y="-616">GCTimer:=0</label>
+			<label kind="guard" x="-365" y="-272">FromGear&gt;0</label>
+			<label kind="synchronisation" x="-365" y="-255">ReqZeroTorque!</label>
+			<label kind="assignment" x="-365" y="-289">GCTimer:=0</label>
 		</transition>
 		<transition>
 			<source ref="id40"/>
-			<target ref="id41"/>
-			<label kind="synchronisation" x="-68" y="-731">ReqNewGear?</label>
-			<label kind="assignment" x="-51" y="-714">SysTimer:=0</label>
+			<target ref="id46"/>
+			<label kind="synchronisation" x="-365" y="-408">ReqNewGear?</label>
+			<label kind="assignment" x="-365" y="-391">SysTimer:=0</label>
 		</transition>
 	</template>
 	<system>system Interface, GearControl, GearBox, Clutch, Engine;
