@@ -5,11 +5,13 @@
 chan ReqSpeed, ReqTorque, ReqZeroTorque, GearNeu, GearSet, SpeedSet;
 chan OpenClutch, CloseClutch, ClutchIsOpen, ClutchIsClosed;
 
+clock SysTimer;
+
 int[0,4] ErrStat;
 int[0,6] FromGear;
 int[0,6] ToGear;
 int[0,2] UseCase;
-clock SysTimer;
+
 
 </declaration>
 	<template>
