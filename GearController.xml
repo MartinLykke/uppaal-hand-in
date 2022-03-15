@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_2.dtd'>
 <nta>
-	<declaration>chan NewGear, ZeroTorque, TorqueZero;
-chan ReqNewGear;
-chan ReqNeu, ReqSet;
-chan ReqSpeed, ReqTorque, ReqZeroTorque;
-chan GearNeu, GearSet;
-chan SpeedSet;
+	<declaration>chan NewGear, ZeroTorque, TorqueZero, ReqNewGear, ReqNeu, ReqSet;
+chan ReqSpeed, ReqTorque, ReqZeroTorque, GearNeu, GearSet, SpeedSet;
 chan OpenClutch, CloseClutch, ClutchIsOpen, ClutchIsClosed;
 
 int[0,4] ErrStat;
@@ -14,6 +10,7 @@ int[0,6] FromGear;
 int[0,6] ToGear;
 int[0,2] UseCase;
 clock SysTimer;
+
 </declaration>
 	<template>
 		<name>Clutch</name>
@@ -78,38 +75,38 @@ clock SysTimer;
 	</template>
 	<template>
 		<name>Interface</name>
-		<location id="id6" x="-348" y="-297" color="#ff00ff">
-			<name x="-358" y="-331">GearN</name>
+		<location id="id6" x="-450" y="-314" color="#ff00ff">
+			<name x="-460" y="-348">GearN</name>
 		</location>
-		<location id="id7" x="-153" y="-365">
-			<name x="-163" y="-399">chkGearN1</name>
+		<location id="id7" x="-195" y="-374">
+			<name x="-205" y="-408">chkGearN1</name>
 		</location>
-		<location id="id8" x="59" y="-289">
-			<name x="49" y="-323">Gear1</name>
+		<location id="id8" x="34" y="-289">
+			<name x="24" y="-323">Gear1</name>
 		</location>
-		<location id="id9" x="161" y="-170">
-			<name x="187" y="-178">chkGear12</name>
+		<location id="id9" x="170" y="-170">
+			<name x="196" y="-178">chkGear12</name>
 		</location>
-		<location id="id10" x="-17" y="-170">
-			<name x="-27" y="-204">chkGear21</name>
+		<location id="id10" x="-93" y="-170">
+			<name x="-103" y="-204">chkGear21</name>
 		</location>
-		<location id="id11" x="59" y="-59">
-			<name x="102" y="-76">Gear2</name>
+		<location id="id11" x="42" y="-59">
+			<name x="85" y="-76">Gear2</name>
 		</location>
-		<location id="id12" x="-42" y="51">
-			<name x="-52" y="17">chkGear32</name>
+		<location id="id12" x="-93" y="42">
+			<name x="-103" y="8">chkGear32</name>
 		</location>
-		<location id="id13" x="187" y="51">
-			<name x="177" y="17">chkGear23</name>
+		<location id="id13" x="178" y="51">
+			<name x="168" y="17">chkGear23</name>
 		</location>
-		<location id="id14" x="68" y="144">
-			<name x="58" y="110">Gear3</name>
+		<location id="id14" x="42" y="144">
+			<name x="32" y="110">Gear3</name>
 		</location>
-		<location id="id15" x="-68" y="238">
-			<name x="-161" y="221">chkGear43</name>
+		<location id="id15" x="-93" y="238">
+			<name x="-186" y="221">chkGear43</name>
 		</location>
-		<location id="id16" x="187" y="238">
-			<name x="212" y="221">chkGear34</name>
+		<location id="id16" x="178" y="238">
+			<name x="203" y="221">chkGear34</name>
 		</location>
 		<location id="id17" x="42" y="340">
 			<name x="32" y="306">Gear4</name>
@@ -117,35 +114,35 @@ clock SysTimer;
 		<location id="id18" x="-93" y="433">
 			<name x="-187" y="408">chkGear54</name>
 		</location>
-		<location id="id19" x="178" y="433">
-			<name x="204" y="425">chkGear45</name>
+		<location id="id19" x="187" y="433">
+			<name x="213" y="425">chkGear45</name>
 		</location>
-		<location id="id20" x="25" y="493">
-			<name x="0" y="518">Gear5</name>
+		<location id="id20" x="42" y="501">
+			<name x="17" y="526">Gear5</name>
 		</location>
-		<location id="id21" x="-459" y="-136">
-			<name x="-561" y="-144">chkGearRN</name>
+		<location id="id21" x="-561" y="-153">
+			<name x="-663" y="-161">chkGearRN</name>
 		</location>
-		<location id="id22" x="-272" y="-136">
-			<name x="-238" y="-136">chkGearNR</name>
+		<location id="id22" x="-374" y="-153">
+			<name x="-340" y="-153">chkGearNR</name>
 		</location>
-		<location id="id23" x="-382" y="0">
-			<name x="-399" y="17">GearR</name>
+		<location id="id23" x="-484" y="-17">
+			<name x="-501" y="0">GearR</name>
 		</location>
-		<location id="id24" x="-195" y="-263">
-			<name x="-205" y="-297">chkGear1N</name>
+		<location id="id24" x="-204" y="-246">
+			<name x="-240" y="-237">chkGear1N</name>
 		</location>
 		<init ref="id6"/>
 		<transition>
 			<source ref="id24"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-330" y="-297">NewGear?</label>
+			<label kind="synchronisation" x="-432" y="-314">NewGear?</label>
 		</transition>
 		<transition>
 			<source ref="id8"/>
 			<target ref="id24"/>
-			<label kind="synchronisation" x="-177" y="-293">ReqNewGear!</label>
-			<label kind="assignment" x="-177" y="-276">FromGear:=1,
+			<label kind="synchronisation" x="-102" y="-297">ReqNewGear!</label>
+			<label kind="assignment" x="-102" y="-280">FromGear:=1,
 ToGear:=0</label>
 		</transition>
 		<transition>
@@ -252,32 +249,32 @@ ToGear:=2</label>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id7"/>
-			<label kind="synchronisation" x="-314" y="-399">ReqNewGear!</label>
-			<label kind="assignment" x="-314" y="-374">FromGear:=0,
+			<label kind="synchronisation" x="-374" y="-416">ReqNewGear!</label>
+			<label kind="assignment" x="-374" y="-391">FromGear:=0,
 ToGear:=1</label>
 		</transition>
 		<transition>
 			<source ref="id21"/>
 			<target ref="id6"/>
-			<label kind="synchronisation" x="-467" y="-246">NewGear?</label>
+			<label kind="synchronisation" x="-569" y="-263">NewGear?</label>
 		</transition>
 		<transition>
 			<source ref="id23"/>
 			<target ref="id21"/>
-			<label kind="synchronisation" x="-518" y="-85">ReqNewGear!</label>
-			<label kind="assignment" x="-518" y="-59">FromGear:=6,
+			<label kind="synchronisation" x="-620" y="-102">ReqNewGear!</label>
+			<label kind="assignment" x="-620" y="-76">FromGear:=6,
 ToGear:=0</label>
 		</transition>
 		<transition>
 			<source ref="id22"/>
 			<target ref="id23"/>
-			<label kind="synchronisation" x="-331" y="-59">NewGear?</label>
+			<label kind="synchronisation" x="-433" y="-76">NewGear?</label>
 		</transition>
 		<transition>
 			<source ref="id6"/>
 			<target ref="id22"/>
-			<label kind="synchronisation" x="-306" y="-238">ReqNewGear!</label>
-			<label kind="assignment" x="-289" y="-212">FromGear:=0,
+			<label kind="synchronisation" x="-408" y="-255">ReqNewGear!</label>
+			<label kind="assignment" x="-391" y="-229">FromGear:=0,
 ToGear:=6</label>
 		</transition>
 	</template>
@@ -785,8 +782,15 @@ GCTimer&lt;=250</label>
 			<label kind="assignment" x="-68" y="-705">SysTimer:=0</label>
 		</transition>
 	</template>
-	<system>// List one or more processes to be composed into a system.
-system Interface, GearControl, GearBox, Clutch, Engine;
+	<system>// init 
+clutch = Clutch();
+interface = Interface();
+gearControl = GearControl();
+gearBox = GearBox();
+engine = Engine();
+
+// compose into system
+system interface, gearControl, gearBox, clutch, engine;
     </system>
 	<queries>
 		<query>
