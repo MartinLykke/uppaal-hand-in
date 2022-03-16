@@ -351,7 +351,8 @@ ToGear:=6</label>
 			<name x="238" y="187">Zero</name>
 		</location>
 		<location id="id33" x="229" y="-348">
-			<name x="219" y="-382">DecTorque</name>
+			<name x="229" y="-408">DecTorque</name>
+			<label kind="invariant" x="229" y="-382">ETimer&lt;=400</label>
 		</location>
 		<location id="id34" x="-323" y="-348">
 			<name x="-333" y="-382">Torque</name>
@@ -803,7 +804,7 @@ GCTimer&lt;=200</label>
 			<comment></comment>
 		</query>
 		<query>
-			<formula>A[] ((ErrStat==0 and UseCase==0 and SysTimer&lt;=900) imply (GearControl.GearChanged or GearControl.Gear))</formula>
+			<formula>A[] ((ErrStat==0 and UseCase==0 and SysTimer&gt;=900) imply (GearControl.GearChanged or GearControl.Gear))</formula>
 			<comment></comment>
 		</query>
 		<query>
