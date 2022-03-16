@@ -812,7 +812,7 @@ GCTimer&lt;=200</label>
 			<comment></comment>
 		</query>
 		<query>
-			<formula>A[] ((ErrStat==0 and UseCase==0 and SysTimer&lt;=150) imply not (GearControl.GearChanged))</formula>
+			<formula>A[] ((ErrStat==0 and UseCase==0 and SysTimer&lt;150) imply not (GearControl.GearChanged))</formula>
 			<comment></comment>
 		</query>
 		<query>
